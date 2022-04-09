@@ -1,4 +1,4 @@
-import cython_test, c_test, ctypesAPI, sample, time
+import python_test, cython_test, ctypesAPI, sample, time, originalPy
 
 
 def cal_time(func):
@@ -11,17 +11,19 @@ def cal_time(func):
 	return wrapper
 
 
-test_python = cal_time(cython_test.test)
-test_cython = cal_time(c_test.test)
+test_python = cal_time(originalPy.test)
+test_cython = cal_time(python_test.test)
+test_cython_plus = cal_time(cython_test.test)
 test_ctypes = cal_time(ctypesAPI.test)
 test_sample = cal_time(sample.test)
 
-
-time1 = test_python(1000000)
-time2 = test_cython(1000000)
+time0 = test_python(1000000)
+time1 = test_cython(1000000)
+time2 = test_cython_plus(1000000)
 time3 = test_ctypes(1000000)
 time4 = test_sample(1000000)
 
-print(f'Cython is {int(time1 / time2)}x faster than Python')
-print(f'Ctypes is {int(time1 / time3)}x faster than Python')
-print(f'C is {int(time1 / time4)}x faster than Python')
+print(f'Cython is {int(time0 / time1)}x faster than Python')
+print(f'Cython_plus is {int(time0 / time2)}x faster than Python')
+print(f'Ctypes is {int(time0 / time3)}x faster than Python')
+print(f'C is {int(time0 / time4)}x faster than Python')

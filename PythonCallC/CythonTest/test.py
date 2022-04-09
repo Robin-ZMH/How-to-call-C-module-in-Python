@@ -1,5 +1,6 @@
+import originalPy
 import cython_test
-import c_test
+import python_test
 import time
 
 
@@ -12,9 +13,13 @@ def cal_time(func):
 		return end-start
 	return wrapper
 
-test1 = cal_time(cython_test.test)
-test2 = cal_time(c_test.test)
+test1 = cal_time(originalPy.test)
+test2 = cal_time(python_test.test)
+test3 = cal_time(cython_test.test)
 
 time1 = test1(10000000)
 time2 = test2(10000000)
-print(f'C is {int(time1 / time2)}x faster than Python')
+time3 = test3(10000000)
+
+print(f'Cython is {int(time1 / time2)}x faster than Python')
+print(f'C is {int(time1 / time3)}x faster than Python')
