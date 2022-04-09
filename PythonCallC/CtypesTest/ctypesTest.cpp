@@ -70,3 +70,12 @@ C double distance(Point *p1, Point *p2){
     printf("===============distance===============\n");
     return hypot(p1->x - p2->x, p1->y - p2->y);
 }
+
+
+C int testTime(int x){
+    int res = 0;
+    for(int i = 0; i < x; i++){
+        res += i;
+    }
+    return res;
+}

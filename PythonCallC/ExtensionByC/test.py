@@ -11,5 +11,8 @@ res = sample.mod(9, 2)
 print(f'quotient={res[0]}, remainder={res[1]}')
 
 li = [i for i in range(15)]
-# li = array('i', li)
+li = array('i', li)
 print(sample.avg(li))
+
+print('===========test==========')
+print(sample.test(101))

@@ -13,3 +13,5 @@ print(ct.testPointer(666))
 print(ct.testReturnPointer(233))
 
 print(ct.distance((1, 2), (4, 5)))
+
+print(ct.test(101))

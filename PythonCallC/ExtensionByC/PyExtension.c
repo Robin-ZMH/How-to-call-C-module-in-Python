@@ -81,6 +81,16 @@ static PyObject *py_avg(PyObject *self, PyObject *args){
 }
 
 
+static PyObject *py_test(PyObject *self, PyObject *args){
+    int x, result;
+
+    if (! PyArg_ParseTuple(args, "i", &x)){
+        return NULL;
+    }
+    result = test(x);
+    return Py_BuildValue("i", result);
+}
+
 
 // // 数组类型需要先获取信息，将信息保存到 Py_buffer类型的变量中
 // static PyObject *py_avg(PyObject *self, PyObject *args){
@@ -106,7 +116,8 @@ static PyMethodDef SampleMethods[] = {
     {"divide", py_divide, METH_VARARGS, "NULL"},
     {"pointer", py_pointer, METH_VARARGS, "NULL"},
     {"mod", py_mod, METH_VARARGS, "NULL"},
-    {"avg", py_avg, METH_VARARGS, "NULL"}
+    {"avg", py_avg, METH_VARARGS, "NULL"},
+    {"test", py_test, METH_VARARGS, "NULL"}
 };
 
 
