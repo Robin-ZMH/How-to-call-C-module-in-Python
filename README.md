@@ -9,6 +9,6 @@ Python调用C++函数的几种方法
 # 效率提升对比
 Py_Extension ≈ cython > ctypes
 
-Cython is 100x faster than Python
-Ctypes is 10x faster than Python
+Cython is 100x faster than Python  
+Ctypes is 10x faster than Python  
 C is 100x faster than Python
