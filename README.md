@@ -18,6 +18,6 @@ time span=0.0002522468566894531s, res=1783293664
 
 Cython is 1x faster than Python  
 Ctypes is 17x faster than Python  
-Cython_plus is 134x faster than Python  
-C is 152x faster than Python  
+Cython_plus is 160x faster than Python  
+C is 160x faster than Python  
 
